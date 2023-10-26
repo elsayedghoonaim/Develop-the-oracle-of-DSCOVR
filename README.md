@@ -11,13 +11,13 @@ To run this project, follow the steps below:
 
 Install the required libraries:
 
-numpy
-pandas
-matplotlib
-seaborn
-tensorflow
-keras
-scikit-learn
+numpy, 
+pandas, 
+matplotlib, 
+seaborn, 
+tensorflow, 
+keras, 
+scikit-learn, 
 
 Execute the code:
 
