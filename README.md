@@ -1,62 +1,64 @@
-Solar Wind Prediction Project
-This project aims to predict the Kp-index (a measure of geomagnetic activity) using a neural network model and solar wind data. The Kp-index is crucial for understanding and forecasting space weather events that can impact Earth's communication systems, power grids, and satellites.
+# Solar Wind KP Index Prediction
 
-Project Structure
-_data/omni_csvs/DatedFullData.csv: The raw dataset containing solar wind parameters and the Kp-index.
-solar_wind_prediction.ipynb: Jupyter Notebook containing the data preprocessing, model building, training, and evaluation code. (You can convert this to a .py file if desired).
-solar_wind.h5: The saved Keras model file (if you decide to save it).
-README.md: This file, providing project details.
-Dependencies
-Python 3.x
-NumPy
-pandas
-matplotlib
-seaborn
-TensorFlow
-Keras
-scikit-learn
-Installation
-Clone this repository: git clone [your-repository-url]
-Install the required packages: pip install -r requirements.txt (Create a requirements.txt file listing the dependencies)
-Data
-The dataset used in this project is "DatedFullData.csv," which contains solar wind parameters such as:
+This project aims to predict the KP index, a measure of geomagnetic activity, using solar wind data and machine learning techniques.
 
-Rot#: Bartels rotation number
-ABS_B: Absolute value of the interplanetary magnetic field (IMF)
-T: Proton temperature
-V: Solar wind speed
-Pressure: Solar wind dynamic pressure
-R: Sunspot number
-F10_INDEX: Solar radio flux at 10.7 cm
-DST: Disturbance storm time index
-AP_INDEX: Planetary geomagnetic activity index
-AL_INDEX: Auroral electrojet index
-PC_N_INDEX: Polar cap north index
-Solar_Lyman_alpha: Solar Lyman-alpha emission
-KP: Kp-index (target variable)
-Methodology
-Data Loading and Preprocessing:
+## Project Overview
 
-Load the dataset from DatedFullData.csv.
-Set the Datetime column as the index.
-Drop irrelevant columns based on correlation analysis.
-Split the data into training, validation, and testing sets.
-Standardize the features.
-Model Building:
+The project uses a dataset containing various solar wind parameters and geomagnetic indices to train a neural network model for KP index prediction. The model is implemented using TensorFlow/Keras and achieves high accuracy in predicting the KP index.
 
-Create a sequential neural network with two hidden layers (64 neurons each) using ReLU activation.
-Use linear activation for the output layer (Kp-index is continuous).
-Apply L2 regularization to the bias of the second hidden layer to prevent overfitting.
-Model Training:
+## Key Features
 
-Compile the model with mean squared error loss and the Adam optimizer.
-Train the model for 70 epochs with a batch size of 256.
-Validate during training to monitor performance on unseen data.
-Model Evaluation:
+- Data preprocessing and exploratory data analysis
+- Feature selection based on correlation analysis
+- Neural network model implementation using TensorFlow/Keras
+- Model training and validation
+- Performance evaluation using RMSE and R-squared metrics
+- Visualization of training/validation loss and prediction results
 
-Calculate RMSE and R-squared on the test set.
-Visualize the actual vs. predicted Kp-index values.
-Results
-RMSE: 0.7544 (lower is better, indicates how far off predictions are on average)
-R-squared: 0.9963 (high value indicates the model explains a large portion of the variance in the target variable)
-The model's high R-squared suggests strong predictive power.
+## Requirements
+
+- Python 3.x
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- TensorFlow
+- Scikit-learn
+
+## Usage
+
+1. Ensure all required libraries are installed.
+2. Load the solar wind data CSV file.
+3. Run the data preprocessing steps.
+4. Train the neural network model.
+5. Evaluate the model performance.
+6. Visualize the results.
+
+## Model Architecture
+
+The neural network model consists of:
+- Input layer: 12 features
+- Hidden layer 1: 64 neurons with ReLU activation
+- Hidden layer 2: 64 neurons with ReLU activation and L2 regularization
+- Output layer: 1 neuron with linear activation
+
+## Results
+
+The model achieves:
+- RMSE: 0.7544
+- R-squared: 0.9963
+
+## Future Improvements
+
+- Experiment with different model architectures
+- Implement feature engineering techniques
+- Explore other machine learning algorithms
+- Incorporate real-time solar wind data for live predictions
+
+## Contributors
+
+[Your Name/Team Name]
+
+## License
+
+[Specify the license for your project]
