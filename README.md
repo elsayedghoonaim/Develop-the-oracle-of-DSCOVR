@@ -57,8 +57,4 @@ The model achieves:
 
 ## Contributors
 
-[Your Name/Team Name]
-
-## License
-
-[Specify the license for your project]
+[Elsayed Ghonaim/NSST STORM]
